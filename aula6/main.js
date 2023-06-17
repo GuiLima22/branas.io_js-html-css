@@ -9,3 +9,5 @@ console.log(fevereiro);
 const marco = new Mes("marco", fevereiro.detalhesDoMes.saldo, lancamentosMarco);
 marco.calcularFinancas();
 console.log(marco);
+
+janeiro.adicionarLancamentos(new Lancamento('despesa', 500, 'escola'))

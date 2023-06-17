@@ -22,8 +22,9 @@ class Mes {
             throw new Error('"nome" cannot be empty');
         }
         this.nome = nome;
-        this.detalhesDoMes = { saldo: 0, juros: 0, saldoInicial, rendimentos: 0, receitas: 0, despesas: 0, percentualDespesas: [] };
+        this.saldoInicial = saldoInicial;
         this.lancamentos = lancamentos;
+        this.detalhesDoMes = { saldo: 0, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, percentualDespesas: [] };
     };
 
     adicionarLancamentos(lancamento) {
@@ -31,7 +32,7 @@ class Mes {
     };
 
     calcularSaldo() {
-        this.detalhesDoMes.saldo += this.detalhesDoMes.saldoInicial;
+        this.detalhesDoMes.saldo += this.saldoInicial;
         for (const lancamento of this.lancamentos) {
             if (lancamento.tipo === "receita") {
                 this.detalhesDoMes.saldo += arredondar(lancamento.valor);
