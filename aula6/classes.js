@@ -17,13 +17,13 @@ class Lancamento {
 
 
 class Mes {
-    constructor(nome, saldoInicial, lancamentos) {
+    constructor(nome, saldoInicial) {
         if (nome === "") {
             throw new Error('"nome" cannot be empty');
         }
         this.nome = nome;
         this.saldoInicial = saldoInicial;
-        this.lancamentos = lancamentos;
+        this.lancamentos = [];
         this.detalhesDoMes = { saldo: 0, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, percentualDespesas: [] };
     };
 
