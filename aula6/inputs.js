@@ -1,4 +1,4 @@
-const janeiro = new Mes("janeiro", 0);
+const janeiro = new Mes("janeiro");
 
 janeiro.adicionarLancamentos(new Lancamento('receita', 3000, 'salario'))
 janeiro.adicionarLancamentos(new Lancamento('despesa', 1000, 'aluguel'))
@@ -11,10 +11,8 @@ janeiro.adicionarLancamentos(new Lancamento('despesa', 500, 'alimentacao'))
 janeiro.adicionarLancamentos(new Lancamento('despesa', 300, 'condominio'))
 janeiro.adicionarLancamentos(new Lancamento('despesa', 100, 'farmacia'))
 
-janeiro.calcularFinancas();
 
-
-const fevereiro = new Mes("fevereiro", janeiro.detalhesDoMes.saldo);
+const fevereiro = new Mes("fevereiro");
 
 fevereiro.adicionarLancamentos(new Lancamento('receita', 3000, 'salario'))
 fevereiro.adicionarLancamentos(new Lancamento('despesa', 1200, 'aluguel'))
@@ -25,10 +23,8 @@ fevereiro.adicionarLancamentos(new Lancamento('despesa', 500, 'transporte'))
 fevereiro.adicionarLancamentos(new Lancamento('despesa', 1000, 'alimentacao'))
 fevereiro.adicionarLancamentos(new Lancamento('despesa', 400, 'condominio'))
 
-fevereiro.calcularFinancas();
 
-
-const marco = new Mes("marco", fevereiro.detalhesDoMes.saldo);
+const marco = new Mes("marco");
 
 marco.adicionarLancamentos(new Lancamento('receita', 4000, 'salario'))
 marco.adicionarLancamentos(new Lancamento('despesa', 1200, 'aluguel'))
@@ -41,12 +37,20 @@ marco.adicionarLancamentos(new Lancamento('despesa', 1000, 'alimentacao'))
 marco.adicionarLancamentos(new Lancamento('despesa', 400, 'condominio'))
 
 
-marco.calcularFinancas();
+// console.log(janeiro);
+// console.log(fevereiro);
+// console.log(marco);
 
 
-console.log(janeiro);
-console.log(fevereiro);
-console.log(marco);
+// janeiro.adicionarLancamentos(new Lancamento('despesa', 500, 'escola'))
 
+const ano2023 = new Ano(2023)
 
-janeiro.adicionarLancamentos(new Lancamento('despesa', 500, 'escola'))
+ano2023.adicionarMes(janeiro);
+ano2023.adicionarMes(fevereiro);
+ano2023.adicionarMes(marco)
+ano2023.calcularSaldo();
+
+console.log(janeiro)
+console.log(fevereiro)
+console.log(marco)

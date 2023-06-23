@@ -24,7 +24,6 @@ class Mes {
         this.nome = nome;
         this.saldoInicial = saldoInicial;
         this.lancamentos = [];
-        this.detalhesDoMes = { saldo: 0, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, percentualDespesas: [] };
     };
 
     adicionarLancamentos(lancamento) {
@@ -72,9 +71,31 @@ class Mes {
     };
 
     calcularFinancas() {
+        this.detalhesDoMes = { saldo: 0, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, percentualDespesas: [] };
         this.calcularSaldo();
         this.calcularPercentualDespesas();
         this.definirJurosOuRendimento();
     };
 
+}
+
+class Ano {
+
+    constructor(ano) {
+        this.ano = ano;
+        this.meses = [];
+    }
+
+    adicionarMes(mes) {
+        this.meses.push(mes);
+    }
+
+    calcularSaldo(){
+        let saldoInicial = 0;
+        for (const mes of this.meses){
+            mes.saldoInicial = saldoInicial;
+            mes.calcularFinancas();
+            saldoInicial = mes.detalhesDoMes.saldo;
+        }
+    }
 }
