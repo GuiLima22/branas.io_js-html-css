@@ -50,7 +50,3 @@ ano2023.adicionarMes(janeiro);
 ano2023.adicionarMes(fevereiro);
 ano2023.adicionarMes(marco)
 ano2023.calcularSaldo();
-
-console.log(janeiro)
-console.log(fevereiro)
-console.log(marco)
