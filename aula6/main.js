@@ -30,3 +30,21 @@ function render(){
 }
 
 render();
+
+function addLancamento(){
+    const month = document.getElementById("mes");
+    const type = document.getElementById("tipo");
+    const value = document.getElementById("valor");
+    const category = document.getElementById("categoria");
+    ano2023.adicionarLancamento(month.value, new Lancamento(type.value, parseFloat(value.value), category.value))
+    ano2023.calcularSaldo();
+    render();
+    month.value = "";
+    type.value = "";
+    value.value = "";
+    category.value = "";
+    console.log(month.value)
+}
+
+const botao = document.getElementById("botao");
+botao.addEventListener("click", addLancamento);

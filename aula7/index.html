@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <script src="funcs.js" defer></script>
+    <script src="classes.js" defer></script>
+    <script src="inputs.js" defer></script>
+    <script src="main.js" defer></script>
+
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #form-lancamento{
+            position: fixed;
+            width: 13em;
+            right: 10em;
+            border: 1px solid #7c7c7c;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .5em;
+            background-color: white;
+        }
+
+        #form-lancamento > select{
+            cursor: pointer;
+        }
+
+        #form-lancamento > input, #form-lancamento > select{
+            width: 100%;
+            height: 2em;
+            font-size: 1em;
+            border-radius: 0.5em;
+            border: 1px solid #ccc;
+            text-indent: 0.5em;
+        }
+
+        #form-lancamento > button{
+            height: 3em;
+            width: 100%;
+            border: none;
+            border-radius: 1em;
+            background-color: rgb(128, 128, 241);
+            color: white;
+            cursor: pointer;
+        }
+
+        .tableStyle{
+            width: 30em;
+            background-color: rgb(82, 82, 82);
+            border-collapse: collapse;
+        }
+
+        .tableStyle td, .tableStyle th{
+            padding: 8px;
+            border: 1px solid #acacac;
+        }
+
+        .tableStyle th{
+            text-align: left;
+            background-color: #7c7c7c;
+        }
+
+        .receita{
+            background-color: rgb(102, 167, 102);
+        }
+
+        .despesa{
+            background-color: rgb(255, 104, 104);
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Finanças Pessoais</h1>
+    <div id="form-lancamento">
+        <select name="mes" id="mes">
+            <option value="" selected>mes</option>
+        </select>
+        <select name="tipo" id="tipo">
+            <option value="" selected>tipo</option>
+            <option value="receita">receita</option>
+            <option value="despesa">despesa</option>
+        </select>
+        <input id="valor" type="number" placeholder="valor">
+        <input id="categoria" type="text" placeholder="categoria">
+        <button id="botao">Adicionar Lançamento</button>
+    </div>
+    <div id="app"></div>
+</body>
+
+</html>
