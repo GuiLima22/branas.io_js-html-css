@@ -1,25 +1,32 @@
-for (const rep of ano2023.meses){
-    console.log(rep)
+function addDocElements (element, text, ref){
+    const constant = document.createElement(element);
+    constant.innerText = text;
+    ref.appendChild(constant);
 }
 
 function render(){
     const app = document.getElementById("app");
-    
-    for (const mes of ano2023.meses){
-        const nomeMes = document.createElement("h2");
-        nomeMes.innerText = mes.nome;
-        app.appendChild(nomeMes);
-        for (const lancamento of mes.lancamentos){
-            const detalhesLancamento = document.createElement("p");
-            detalhesLancamento.innerText = `${lancamento.tipo}  R$${lancamento.valor},00 ${lancamento.categoria}`
-            nomeMes.appendChild(detalhesLancamento)
-        }
-        const saldo = document.createElement("h3");
-        saldo.innerText = `Saldo: R$${mes.detalhesDoMes.saldo}`
-        app.appendChild(saldo)
-        app.appendChild(document.createElement("hr"))
+    if (app.firstChild){
+        app.firstChild.remove();
     }
 
+    const panel = document.createElement("div");
+    
+    for (const mes of ano2023.meses){
+        addDocElements("h2", mes.nome, panel);
+
+        for (const lancamento of mes.lancamentos){
+            const adicionarLancamentos = `tipo: ${lancamento.tipo} | valor: ${lancamento.valor} | categoria: ${lancamento.categoria}`
+            addDocElements("p", adicionarLancamentos, panel);
+        }
+
+        const valorSaldo = `Saldo: ${mes.detalhesDoMes.saldo}`;
+        addDocElements("h3", valorSaldo, panel)
+        
+        panel.appendChild(document.createElement("hr")); 
+    }
+
+    app.appendChild(panel)
 }
 
 render();
