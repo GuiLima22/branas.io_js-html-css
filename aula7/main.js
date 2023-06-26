@@ -12,6 +12,26 @@ function render() {
 
     const panel = document.createElement("div");
 
+    const cores = ["red", "blue", "green"]
+    const grafico = document.createElement("div");
+
+    grafico.className = "grafico"
+
+    for (const mes of ano2023.meses){
+        const column = document.createElement("div");
+        column.className = "grafico-coluna";
+        const cor = document.createElement("div");
+        cor.style.height = 120;
+        cor.style.background = cores.pop();
+        column.appendChild(cor);
+        const nomeMes = document.createElement("div");
+        column.innerText = mes.nome;
+        column.appendChild(nomeMes);
+        grafico.appendChild(column);
+    }
+
+    panel.appendChild(grafico);
+
     for (const mes of ano2023.meses) {
         addDocElements("h2", mes.nome, panel);
 
