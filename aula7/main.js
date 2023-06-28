@@ -20,13 +20,15 @@ function render() {
     for (const mes of ano2023.meses){
         const column = document.createElement("div");
         column.className = "grafico-coluna";
-        const cor = document.createElement("div");
-        cor.style.height = 120;
-        cor.style.background = cores.pop();
-        column.appendChild(cor);
-        const nomeMes = document.createElement("div");
-        column.innerText = mes.nome;
-        column.appendChild(nomeMes);
+        const color = document.createElement("div");
+        color.className = "grafico-coluna-torre";
+        color.style.height = ((mes.detalhesDoMes.saldo * 10) / 220);
+        color.style.background = cores.pop();
+        const monthName = document.createElement("div");
+        monthName.className = "grafico-coluna-nome"
+        monthName.innerText = mes.nome;
+        column.appendChild(color);
+        column.appendChild(monthName);
         grafico.appendChild(column);
     }
 
