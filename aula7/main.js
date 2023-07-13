@@ -1,7 +1,10 @@
-function addDocElements(element, text, ref) {
+function addDocElements(element, text, ref, classDef) {
     const constant = document.createElement(element);
     constant.innerText = text;
     ref.appendChild(constant);
+    if(classDef){
+        constant.className = classDef
+    }
 }
 
 function render() {
@@ -18,6 +21,7 @@ function render() {
     grafico.className = "grafico"
 
     for (const mes of ano2023.meses){
+        console.log(mes)
         const column = document.createElement("div");
         column.className = "grafico-coluna";
         const color = document.createElement("div");
@@ -72,7 +76,7 @@ function render() {
 
         const lineSaldo = document.createElement("tr");
         addDocElements("th", "total", lineSaldo);
-        addDocElements("th", moneyFormat(mes.detalhesDoMes.saldo), lineSaldo);
+        addDocElements("th", moneyFormat(mes.detalhesDoMes.saldo), lineSaldo, "totais");
         tableCreation.appendChild(lineSaldo);
     }
 
@@ -106,3 +110,6 @@ for (mes of ano2023.meses) {
     option.text = mes.nome;
     mesSelect.appendChild(option);
 }
+
+const totais = document.getElementsByClassName('totais')
+console.log(totais)
