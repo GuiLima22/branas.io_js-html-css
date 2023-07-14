@@ -13,6 +13,18 @@ class Lancamento {
         this.valor = valor;
         this.categoria = categoria;
     }
+
+    isNumberNeg() {
+        //     if (this.tipo === 'despesa') {
+        //         return this.valor * -1
+        //     }
+        //     else {
+        //         return this.valor
+        //     }
+        // -------------------------------------------
+        //      operador ternário
+        return (this.tipo === 'despesa') ? this.valor * -1 : this.valor;
+    }
 }
 
 
@@ -90,18 +102,18 @@ class Ano {
         this.meses.push(mes)
     }
 
-    adicionarLancamento(nomeMes, lancamento){
-        for (const mes of this.meses){
-            if(mes.nome === nomeMes){
+    adicionarLancamento(nomeMes, lancamento) {
+        for (const mes of this.meses) {
+            if (mes.nome === nomeMes) {
                 mes.adicionarLancamentos(lancamento);
                 break;
             }
         }
     }
 
-    calcularSaldo(){
+    calcularSaldo() {
         let saldoInicial = 0;
-        for (const mes of this.meses){
+        for (const mes of this.meses) {
             mes.saldoInicial = saldoInicial;
             mes.calcularFinancas();
             saldoInicial = mes.detalhesDoMes.saldo;

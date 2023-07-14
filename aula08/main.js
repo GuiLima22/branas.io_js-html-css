@@ -60,7 +60,7 @@ function render() {
         for (const lancamento of mes.lancamentos) {
             const lineCreation = document.createElement("tr");
             addDocElements("td", lancamento.categoria, lineCreation);
-            addDocElements("td", moneyFormat(lancamento.valor), lineCreation);
+            addDocElements("td", moneyFormat(lancamento.isNumberNeg()), lineCreation);
             tableCreation.appendChild(lineCreation);
             panel.appendChild(tableCreation);
 

@@ -39,13 +39,6 @@ marco.adicionarLancamentos(new Lancamento('despesa', 1000, 'alimentacao'))
 marco.adicionarLancamentos(new Lancamento('despesa', 400, 'condominio'))
 
 
-// console.log(janeiro);
-// console.log(fevereiro);
-// console.log(marco);
-
-
-// janeiro.adicionarLancamentos(new Lancamento('despesa', 500, 'escola'))
-
 const ano2023 = new Ano(2023)
 
 ano2023.adicionarMes(janeiro);
