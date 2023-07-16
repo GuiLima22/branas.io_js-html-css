@@ -1,42 +1,42 @@
-const janeiro = new Mes("janeiro");
+const janeiro = new Mes("Janeiro");
 
-janeiro.adicionarLancamentos(new Lancamento('receita', 3000, 'salario'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 1000, 'aluguel'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 200, 'conta_de_luz'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 100, 'conta_de_agua'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 100, 'internet'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 300, 'transporte'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 300, 'lazer'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 500, 'alimentacao'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 300, 'condominio'))
-janeiro.adicionarLancamentos(new Lancamento('despesa', 100, 'farmacia'))
-janeiro.adicionarLancamentos(new Lancamento('receita', 3000, 'freela'))
-
-
-const fevereiro = new Mes("fevereiro");
-
-fevereiro.adicionarLancamentos(new Lancamento('receita', 3000, 'salario'))
-fevereiro.adicionarLancamentos(new Lancamento('despesa', 1200, 'aluguel'))
-fevereiro.adicionarLancamentos(new Lancamento('despesa', 250, 'conta_de_luz'))
-fevereiro.adicionarLancamentos(new Lancamento('despesa', 100, 'conta_de_agua'))
-fevereiro.adicionarLancamentos(new Lancamento('despesa', 100, 'internet'))
-fevereiro.adicionarLancamentos(new Lancamento('despesa', 500, 'transporte'))
-fevereiro.adicionarLancamentos(new Lancamento('despesa', 1000, 'alimentacao'))
-fevereiro.adicionarLancamentos(new Lancamento('despesa', 400, 'condominio'))
-fevereiro.adicionarLancamentos(new Lancamento('receita', 5000, 'freela'))
+janeiro.adicionarLancamentos(new Lancamento('receita', 3000, 'Salário'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 1000, 'Aluguel'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 200, 'Conta de Luz'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 100, 'Conta de Água'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 100, 'Internet'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 300, 'Transporte'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 300, 'Lazer'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 500, 'Alimentação'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 300, 'Condomínio'))
+janeiro.adicionarLancamentos(new Lancamento('despesa', 100, 'Farmácia'))
+janeiro.adicionarLancamentos(new Lancamento('receita', 3000, 'Freela'))
 
 
-const marco = new Mes("marco");
+const fevereiro = new Mes("Fevereiro");
 
-marco.adicionarLancamentos(new Lancamento('receita', 4000, 'salario'))
-marco.adicionarLancamentos(new Lancamento('despesa', 1200, 'aluguel'))
-marco.adicionarLancamentos(new Lancamento('despesa', 200, 'conta_de_luz'))
-marco.adicionarLancamentos(new Lancamento('despesa', 100, 'conta_de_agua'))
-marco.adicionarLancamentos(new Lancamento('despesa', 200, 'internet'))
-marco.adicionarLancamentos(new Lancamento('despesa', 500, 'transporte'))
-marco.adicionarLancamentos(new Lancamento('despesa', 800, 'lazer'))
-marco.adicionarLancamentos(new Lancamento('despesa', 1000, 'alimentacao'))
-marco.adicionarLancamentos(new Lancamento('despesa', 400, 'condominio'))
+fevereiro.adicionarLancamentos(new Lancamento('receita', 3000, 'Salário'))
+fevereiro.adicionarLancamentos(new Lancamento('despesa', 1200, 'Aluguel'))
+fevereiro.adicionarLancamentos(new Lancamento('despesa', 250, 'Conta de Luz'))
+fevereiro.adicionarLancamentos(new Lancamento('despesa', 100, 'Conta de Água'))
+fevereiro.adicionarLancamentos(new Lancamento('despesa', 100, 'Internet'))
+fevereiro.adicionarLancamentos(new Lancamento('despesa', 500, 'Transporte'))
+fevereiro.adicionarLancamentos(new Lancamento('despesa', 1000, 'Alimentação'))
+fevereiro.adicionarLancamentos(new Lancamento('despesa', 400, 'Condomínio'))
+fevereiro.adicionarLancamentos(new Lancamento('receita', 5000, 'Freela'))
+
+
+const marco = new Mes("Março");
+
+marco.adicionarLancamentos(new Lancamento('receita', 4000, 'Salário'))
+marco.adicionarLancamentos(new Lancamento('despesa', 1200, 'Aluguel'))
+marco.adicionarLancamentos(new Lancamento('despesa', 200, 'Conta de Luz'))
+marco.adicionarLancamentos(new Lancamento('despesa', 100, 'Conta de Água'))
+marco.adicionarLancamentos(new Lancamento('despesa', 200, 'Internet'))
+marco.adicionarLancamentos(new Lancamento('despesa', 500, 'Transporte'))
+marco.adicionarLancamentos(new Lancamento('despesa', 800, 'Lazer'))
+marco.adicionarLancamentos(new Lancamento('despesa', 1000, 'Alimentação'))
+marco.adicionarLancamentos(new Lancamento('despesa', 400, 'Condomínio'))
 
 
 const ano2023 = new Ano(2023)
