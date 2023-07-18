@@ -129,6 +129,24 @@ class Ano {
         }
         return highest;
     }
+
+    arrMeses(prop){
+        const arr = [];
+        const highest = this.maiorSaldo();
+        for (const mes of this.meses){
+            if(prop == "names"){
+                arr.push(mes.nome);
+            }
+            else if (prop == "values"){
+                arr.push(mes.detalhesDoMes.saldo);
+            }
+            else if (prop == "graphProportion"){
+                arr.push(mes.detalhesDoMes.saldo * 200 / highest);
+            }
+        }
+
+        return arr;
+    }
 }
 
 class Table {
@@ -179,70 +197,4 @@ class Graph {
     }
 }
 
-class Chart {
-    render() {
-        const app = document.getElementById("app");
-        if (app.firstChild) {
-            app.firstChild.remove();
-        }
 
-        const panel = document.createElement("div");
-
-        const grafico = new Graph();
-        for (const mes of ano2023.meses) {
-            const displayTower = (mes.detalhesDoMes.saldo * 200) / ano2023.maiorSaldo();
-            grafico.addColumn(displayTower, mes.nome);
-        }
-        panel.appendChild(grafico.element);
-
-        for (const mes of ano2023.meses) {
-            addDocElements("h2", mes.nome, panel);
-
-            const tableCreation = new Table("tableStyle");
-            tableCreation.addRow('th', ["Categoria", "Valor"]);
-
-            for (const lancamento of mes.lancamentos) {
-                tableCreation.addRow('td', [lancamento.categoria, moneyFormat(lancamento.isNumberNeg())], lancamento.tipo)
-            }
-
-            tableCreation.addRow('th', ['Rendimentos', moneyFormat(mes.detalhesDoMes.rendimentos)]);
-            tableCreation.addRow('th', ['Juros', moneyFormat(mes.detalhesDoMes.juros)]);
-            tableCreation.addRow('th', ['Total', moneyFormat(mes.detalhesDoMes.saldo)]);
-
-            panel.appendChild(tableCreation.element);
-        }
-
-        app.appendChild(panel);
-    }
-}
-
-
-class Form {
-    receiveInput() {
-        const month = document.getElementById("mes");
-        const type = document.getElementById("tipo");
-        const value = document.getElementById("valor");
-        const category = document.getElementById("categoria");
-        ano2023.adicionarLancamento(month.value, new Lancamento(type.value, Number(value.value), category.value));
-        ano2023.calcularSaldo();
-        chart.render();
-        inputCleaner([month, type, value, category]);
-    }
-
-    monthPush() {
-        for (const mes of ano2023.meses) {
-            const monthInput = document.getElementById("mes");
-            const option = document.createElement("option");
-            option.text = mes.nome;
-            monthInput.appendChild(option);
-        }
-    }
-
-    addLancamento() {
-        this.monthPush();
-
-        const botao = document.getElementById("botao");
-        botao.addEventListener("click", this.receiveInput);
-    }
-
-}
