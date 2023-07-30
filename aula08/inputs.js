@@ -37,11 +37,3 @@ marco.adicionarLancamentos(new Lancamento('despesa', 500, 'Transporte'))
 marco.adicionarLancamentos(new Lancamento('despesa', 800, 'Lazer'))
 marco.adicionarLancamentos(new Lancamento('despesa', 1000, 'Alimentação'))
 marco.adicionarLancamentos(new Lancamento('despesa', 400, 'Condomínio'))
-
-
-const ano2023 = new Ano(2023)
-
-ano2023.adicionarMes(janeiro);
-ano2023.adicionarMes(fevereiro);
-ano2023.adicionarMes(marco)
-ano2023.calcularSaldo();

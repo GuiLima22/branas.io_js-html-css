@@ -37,17 +37,17 @@ class Ano {
         return highest;
     }
 
-    arrMeses(prop){
+    arrMeses(prop) {
         const arr = [];
         const highest = this.maiorSaldo();
-        for (const mes of this.meses){
-            if(prop == "names"){
+        for (const mes of this.meses) {
+            if (prop == "names") {
                 arr.push(mes.nome);
             }
-            else if (prop == "values"){
+            else if (prop == "values") {
                 arr.push(mes.detalhesDoMes.saldo);
             }
-            else if (prop == "graphProportion"){
+            else if (prop == "graphProportion") {
                 arr.push(mes.detalhesDoMes.saldo * 200 / highest);
             }
         }

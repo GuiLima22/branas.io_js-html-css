@@ -1,15 +1,15 @@
 class Table {
     constructor(className) {
         this.element = document.createElement('table');
-        this.element.className = className;
+        this.element.className = className
     }
 
     addRow(type, values, className) {
         const tr = document.createElement('tr');
         if (className == 'despesa') {
-            tr.className = className;
+            tr.className = className
         } else if (className == 'receita') {
-            tr.className = className;
+            tr.className = className
         }
 
         for (const value of values) {
