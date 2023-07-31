@@ -2,16 +2,24 @@ class Display {
     constructor() {
         this.form = new Form();
         this.page = new HTML_Elements();
-        
-        const ano = new Ano(2023);
-        ano.adicionarMes(janeiro);
-        ano.adicionarMes(fevereiro);
-        ano.adicionarMes(marco);
-        ano.calcularSaldo();
-        this.year = ano;
 
         this.app = this.page.takeById("app");
         this.panel = this.page.create("div");
+
+        this.year = new Ano(2023);
+    }
+
+    async init() {
+        const response = await fetch("http://localhost:3000/api/lancamentos");
+        const lancamentos = await response.json();
+
+        this.year.adicionarMes(new Mes("janeiro"));
+        this.year.adicionarMes(new Mes("fevereiro"));
+        this.year.adicionarMes(new Mes("marco"));
+        for (const lancamento of lancamentos){
+            this.year.adicionarLancamento(lancamento.mes, new Lancamento(lancamento.tipo, lancamento.valor, lancamento.categoria))
+        }
+        this.year.calcularSaldo();
     }
 
     graphGenerate() {
@@ -76,9 +84,10 @@ class Display {
     }
 
 
-    render() {
-        this.giveOptionsToForm();
+    async render() {
+        await this.init();
         this.displayConstruction();
+        this.giveOptionsToForm();
         this.button();
     }
 }
