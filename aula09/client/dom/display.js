@@ -13,9 +13,9 @@ class Display {
         const response = await fetch("http://localhost:3000/api/lancamentos");
         const lancamentos = await response.json();
 
-        this.year.adicionarMes(new Mes("janeiro"));
-        this.year.adicionarMes(new Mes("fevereiro"));
-        this.year.adicionarMes(new Mes("marco"));
+        this.year.adicionarMes(new Mes("Janeiro"));
+        this.year.adicionarMes(new Mes("Fevereiro"));
+        this.year.adicionarMes(new Mes("Março"));
         for (const lancamento of lancamentos){
             this.year.adicionarLancamento(lancamento.mes, new Lancamento(lancamento.tipo, lancamento.valor, lancamento.categoria))
         }
