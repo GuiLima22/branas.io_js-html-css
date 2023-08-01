@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="funcs.js" defer></script>
+    <script src="base/lancamento.js" defer></script>
+    <script src="base/mes.js" defer></script>
+    <script src="base/ano.js" defer></script>
+    <script src="dom/table.js" defer></script>
+    <script src="dom/graph.js" defer></script>
+    <script src="dom/html_elements.js" defer></script>
+    <script src="dom/form.js" defer></script>
+    <script src="dom/display.js" defer></script>
+    <script src="inputs.js" defer></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Finanças Pessoais</h1>
+    <div id="form-lancamento">
+        <select name="mes" id="mes">
+            <option value="" selected>Mes</option>
+        </select>
+        <select name="tipo" id="tipo">
+            <option value="" selected>Tipo</option>
+        </select>
+        <input id="valor" type="number" placeholder="Valor">
+        <input id="categoria" type="text" placeholder="Categoria">
+        <button id="botao">Adicionar Lançamento</button>
+    </div>
+    <div id="app"></div>
+</body>
+
+</html>

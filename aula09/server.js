@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+app.use(express.json());
 app.use("/app", express.static("./client"));
 
 const lancamentos = [
@@ -36,8 +37,17 @@ const lancamentos = [
 { mes: "Março", categoria: "Condomínio", tipo: 'despesa', valor: 400 }
 ];
 
+
+// read
 app.get("/api/lancamentos", function (req, res){
     res.json(lancamentos);
+});
+
+// write
+app.post("/api/lancamentos", function (req, res){
+    const lancamento = req.body;
+    lancamentos.push(lancamento);
+    res.end();
 });
 
 app.listen(3000);

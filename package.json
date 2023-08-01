@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/GuiLima22/branas.io_js-html-css/issues"
   },
-  "homepage": "https://github.com/GuiLima22/branas.io_js-html-css#readme"
+  "homepage": "https://github.com/GuiLima22/branas.io_js-html-css#readme",
+  "dependencies": {
+    "psql": "^0.0.1"
+  }
 }
