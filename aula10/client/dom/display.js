@@ -33,7 +33,7 @@ class Display {
         for (const mes of this.year.meses) {
             const title = this.page.create("h2");
             this.page.addText(title, mes.nome);
-            this.page.elementPull(title, this.panel);
+            this.page.elementPull(this.panel, title);
 
             const tableCreation = new Table("tableStyle");
             tableCreation.addRow('th', ["Categoria", "Valor"]);
@@ -65,7 +65,7 @@ class Display {
 
     displayConstruction() {
         this.panel.innerText = "";
-        this.page.elementPull(this.panel, this.app);
+        this.page.elementPull(this.app, this.panel);
         this.graphGenerate();
         this.pullTableElements();
         this.clearForm();
